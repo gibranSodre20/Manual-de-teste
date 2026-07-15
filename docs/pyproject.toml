@@ -1,0 +1,8 @@
+[build-system]
+requires = ["flit_core >=1.0"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "Manual de Teste"
+authors = [{name = "Teste", email = "teste@teste.gov.br"}]
+dynamic = ["version", "description"]
