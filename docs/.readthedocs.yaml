@@ -1,0 +1,20 @@
+version: 2
+
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.11"
+  jobs:
+    post_build:
+      # Cria a pasta para a página única dentro do diretório de saída HTML
+      - mkdir -p $READTHEDOCS_OUTPUT/html/singlehtml/
+      # CORREÇÃO: Adicionado "-D language=pt_BR" para forçar a tradução das diretivas
+      - sphinx-build -b singlehtml -D language=pt_BR docs/source/ $READTHEDOCS_OUTPUT/html/singlehtml/
+
+# Configuração do Sphinx
+python:
+  install:
+    - requirements: docs/requirements.txt  
+
+sphinx:
+  configuration: docs/source/conf.py
