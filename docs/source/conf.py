@@ -5,11 +5,11 @@ from docutils import nodes
 from docutils.parsers.rst import roles
 
 
-def linha_destaque_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
-    node = nodes.inline(rawtext, text, classes=['linha-destaque'])
+def alterar_texto_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    node = nodes.inline(rawtext, text, classes=['alterar-texto'])
     return [node], []
 
-roles.register_local_role('linha-destaque', linha_destaque_role)
+roles.register_local_role('alterar-texto', alterar_texto_role)
 
 # -- Project information
 project = 'Manual de Teste'
